@@ -1,11 +1,4 @@
-data "cloudflare_zone" "utf9k-zone" {
-  name = "utf9k.net"
-}
-
-resource "cloudflare_record" "test" {
-  zone_id = data.cloudflare_zone.utf9k-zone.id
-  name    = "toot"
-  value   = "192.168.0.1"
-  type    = "A"
-  ttl     = 3600
+resource "cloudflare_zone" "utf9k-zone" {
+  account_id = "8e782a355544971b192db9e75d789dca"
+  zone       = "utf9k.net"
 }
