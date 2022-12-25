@@ -8,22 +8,22 @@ resource "cloudflare_pages_project" "utf9k-net" {
   }
   deployment_configs {
     preview {
-        compatibility_date = "2022-12-25"
-        compatibility_flags = []
-        d1_databases = {}
-        durable_object_namespaces = {}
-        environment_variables = {}
-        kv_namespaces = {}
-        r2_buckets = {}
+      compatibility_date        = "2022-12-25"
+      compatibility_flags       = []
+      d1_databases              = {}
+      durable_object_namespaces = {}
+      environment_variables     = {}
+      kv_namespaces             = {}
+      r2_buckets                = {}
     }
     production {
-        compatibility_date = "2022-12-25"
-        compatibility_flags = []
-        d1_databases = {}
-        durable_object_namespaces = {}
-        environment_variables = {}
-        kv_namespaces = {}
-        r2_buckets = {}
+      compatibility_date        = "2022-12-25"
+      compatibility_flags       = []
+      d1_databases              = {}
+      durable_object_namespaces = {}
+      environment_variables     = {}
+      kv_namespaces             = {}
+      r2_buckets                = {}
     }
   }
 }
