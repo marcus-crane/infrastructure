@@ -31,6 +31,8 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
+        env:
+          CLOUDFLARE_API_TOKEN: blahblahblahblahblahblahblahblahblahblah
 
       - name: Terraform Plan
         id: plan
