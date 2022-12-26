@@ -17,7 +17,7 @@ resource "cloudflare_record" "cname-utf9k-net" {
 resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "dotfiles.utf9k.net"
-  value   = "utf9k.pages.dev"
+  value   = "fervent-haibt-5ff3a9.netlify.app"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -57,7 +57,7 @@ resource "cloudflare_record" "cname-towing-utf9k-net" {
 resource "cloudflare_record" "cname-www-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "www.utf9k.net"
-  value   = "nervous-elion-5370f7.netlify.app"
+  value   = "utf9k.pages.dev"
   type    = "CNAME"
   ttl     = 3600
 }
