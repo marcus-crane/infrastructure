@@ -42,7 +42,7 @@ resource "cloudflare_record" "cname-img-utf9k-net" {
 resource "cloudflare_record" "cname-october-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "october.utf9k.net"
-  value   = "friendly-saha-809ec9.netlify.app"
+  value   = cloudflare_pages_project.october-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 3600
 }
@@ -50,7 +50,7 @@ resource "cloudflare_record" "cname-october-utf9k-net" {
 resource "cloudflare_record" "cname-towing-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "towing.utf9k.net"
-  value   = "superlative-nougat-842bb4.netlify.app"
+  value   = cloudflare_pages_project.towing-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 3600
 }
