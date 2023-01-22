@@ -30,6 +30,6 @@ resource "cloudflare_pages_project" "dotfiles-utf9k-net" {
 
 resource "cloudflare_pages_domain" "dotfiles-utf9k-net" {
   account_id   = var.cloudflare_account_id
-  project_name = "dotfiles"
+  project_name = cloudflare_pages_project.dotfiles-utf9k-net.name
   domain       = "dotfiles.utf9k.net"
 }

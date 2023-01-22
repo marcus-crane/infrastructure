@@ -30,13 +30,13 @@ resource "cloudflare_pages_project" "utf9k-net" {
 
 resource "cloudflare_pages_domain" "utf9k-net" {
   account_id   = var.cloudflare_account_id
-  project_name = "utf9k"
+  project_name = cloudflare_pages_project.utf9k-net.name
   domain       = "utf9k.net"
 }
 
 resource "cloudflare_pages_domain" "www-utf9k-net" {
   account_id   = var.cloudflare_account_id
-  project_name = "utf9k"
+  project_name = cloudflare_pages_project.utf9k-net.name
   domain       = "www.utf9k.net"
 }
 
