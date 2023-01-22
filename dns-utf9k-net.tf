@@ -10,7 +10,7 @@ resource "cloudflare_record" "cname-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
   proxied = true
-  value   = "utf9k.pages.dev"
+  value   = cloudflare_pages_project.utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -18,7 +18,7 @@ resource "cloudflare_record" "cname-utf9k-net" {
 resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "dotfiles.utf9k.net"
-  value   = "fervent-haibt-5ff3a9.netlify.app"
+  value   = cloudflare_pages_project.dotfiles-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 3600
 }
