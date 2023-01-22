@@ -1,9 +1,9 @@
 resource "cloudflare_pages_project" "dotfiles-utf9k-net" {
   account_id        = var.cloudflare_account_id
-  name              = "dotfiles"
+  name              = "9kdotfiles"
   production_branch = "main"
   build_config {
-    destination_dir = "public"
+    destination_dir = "site"
     root_dir        = "/"
   }
   deployment_configs {
