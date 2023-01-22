@@ -48,6 +48,6 @@ resource "cloudflare_worker_script" "statistician" {
 
 resource "cloudflare_worker_route" "utf9k" {
   zone_id     = "2117c58a86ea651fc35e585881e42c6e"
-  pattern     = "*.utf9k.net/*"
+  pattern     = "*.utf9k.net/workers/*"
   script_name = cloudflare_worker_script.statistician.name
 }

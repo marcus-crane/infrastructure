@@ -9,9 +9,10 @@ resource "cloudflare_zone" "utf9k-net-zone" {
 resource "cloudflare_record" "cname-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
+  proxied = true
   value   = "utf9k.pages.dev"
   type    = "CNAME"
-  ttl     = 3600
+  ttl     = 1
 }
 
 resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
@@ -57,9 +58,10 @@ resource "cloudflare_record" "cname-towing-utf9k-net" {
 resource "cloudflare_record" "cname-www-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "www.utf9k.net"
+  proxied = true
   value   = "utf9k.net"
   type    = "CNAME"
-  ttl     = 3600
+  ttl     = 1
 }
 
 ## Mail
