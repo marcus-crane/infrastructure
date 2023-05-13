@@ -312,7 +312,7 @@ resource "cloudflare_record" "txt-acme-www-utf9k-net" {
 resource "cloudflare_record" "txt-spf-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "v=spf1 include:spf.messagingengine.com ?all"
+  value   = "v=spf1 include:spf.messagingengine.com -all"
   type    = "TXT"
   ttl     = 3600
 }
