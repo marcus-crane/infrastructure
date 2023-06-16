@@ -39,15 +39,3 @@ resource "cloudflare_pages_domain" "www-utf9k-net" {
   project_name = cloudflare_pages_project.utf9k-net.name
   domain       = "www.utf9k.net"
 }
-
-resource "cloudflare_worker_script" "statistician" {
-
-  name    = "statistician"
-  content = file("scripts/statistician.js")
-}
-
-resource "cloudflare_worker_route" "utf9k" {
-  zone_id     = "2117c58a86ea651fc35e585881e42c6e"
-  pattern     = "utf9k.net/workers/*"
-  script_name = cloudflare_worker_script.statistician.name
-}
