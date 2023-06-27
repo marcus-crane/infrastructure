@@ -3,14 +3,12 @@ resource "cloudflare_zone" "utf9k-org-zone" {
   zone       = "utf9k.org"
 }
 
-# CNAME records
-
-resource "cloudflare_record" "cname-utf9k-org" {
+resource "cloudflare_record" "a-utf9k-org" {
   zone_id = cloudflare_zone.utf9k-org-zone.id
   name    = "utf9k.org"
   proxied = true
-  value   = "utf9k.net"
-  type    = "CNAME"
+  value   = "192.0.2.1"
+  type    = "A"
   ttl     = 1
 }
 
