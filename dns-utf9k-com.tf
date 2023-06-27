@@ -22,23 +22,23 @@ resource "cloudflare_record" "a-www-utf9k-com" {
 }
 
 resource "cloudflare_ruleset" "utf9k_com_redirect" {
-    zone_id = cloudflare_zone.utf9k-com-zone.id
-    name = "Redirect to utf9k.net"
-    kind = "zone"
-    phase = "http_request_redirect"
+  zone_id = cloudflare_zone.utf9k-com-zone.id
+  name    = "Redirect to utf9k.net"
+  kind    = "zone"
+  phase   = "http_request_redirect"
 
-    rules {
-        action = "redirect"
-        action_parameters {
-          from_value {
-            status_code = 301
-            target_url {
-              value = "https://utf9k.net"
-            }
-            preserve_query_string = false
-          }
+  rules {
+    action = "redirect"
+    action_parameters {
+      from_value {
+        status_code = 301
+        target_url {
+          value = "https://utf9k.net"
         }
-        expression = "(http.host contains \"utf9k\")"
-        enabled = true
+        preserve_query_string = false
+      }
     }
+    expression = "(http.host contains \"utf9k\")"
+    enabled    = true
+  }
 }
