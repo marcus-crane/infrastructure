@@ -43,10 +43,18 @@ resource "cloudflare_ruleset" "utf9k_org_redirect" {
   }
 }
 
+resource "cloudflare_record" "txt-spf-utf9k-org" {
+  zone_id = cloudflare_zone.utf9k-org-zone.id
+  name    = "utf9k.org"
+  value   = "v=spf1 -all"
+  type    = "TXT"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "txt-dmarc-utf9k-org" {
   zone_id = cloudflare_zone.utf9k-org-zone.id
   name    = "_dmarc.utf9k.org"
-  value   = "v=DMARC1;p=reject;sp=reject;pct=100;rua=mailto:admin@utf9k.net;"
+  value   = "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s;rua=mailto:admin@utf9k.net;"
   type    = "TXT"
   ttl     = 3600
 }
