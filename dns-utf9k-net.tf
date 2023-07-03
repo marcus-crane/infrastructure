@@ -352,7 +352,7 @@ resource "cloudflare_record" "txt-greeting-utf9k-net" {
 resource "cloudflare_record" "txt-dmarc-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_dmarc.utf9k.net"
-  value   = "v=DMARC1;p=quarantine;sp=quarantine;pct=100;rua=mailto:dmarcreports@example.com;"
+  value   = "v=DMARC1;p=quarantine;sp=quarantine;pct=100;rua=mailto:admin@utf9k.net;"
   type    = "TXT"
   ttl     = 3600
 }
