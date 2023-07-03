@@ -43,10 +43,20 @@ resource "cloudflare_ruleset" "utf9k_org_redirect" {
   }
 }
 
+
+
 resource "cloudflare_record" "txt-spf-utf9k-org" {
   zone_id = cloudflare_zone.utf9k-org-zone.id
   name    = "utf9k.org"
   value   = "v=spf1 -all"
+  type    = "TXT"
+  ttl     = 3600
+}
+
+resource "cloudflare_record" "txt-dkim-utf9k-org" {
+  zone_id = cloudflare_zone.utf9k-org-zone.id
+  name    = "*._domainkey.utf9k.org"
+  value   = "v=DKIM1; p="
   type    = "TXT"
   ttl     = 3600
 }

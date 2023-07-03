@@ -51,6 +51,14 @@ resource "cloudflare_record" "txt-spf-utf9k-com" {
   ttl     = 3600
 }
 
+resource "cloudflare_record" "txt-dkim-utf9k-com" {
+  zone_id = cloudflare_zone.utf9k-com-zone.id
+  name    = "*._domainkey.utf9k.com"
+  value   = "v=DKIM1; p="
+  type    = "TXT"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "txt-dmarc-utf9k-com" {
   zone_id = cloudflare_zone.utf9k-com-zone.id
   name    = "_dmarc.utf9k.com"
