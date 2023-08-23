@@ -359,7 +359,7 @@ resource "cloudflare_record" "txt-dmarc-utf9k-net" {
 
 resource "cloudflare_record" "txt-atproto-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
-  name    = "_atproto.utf9k.net"
+  name    = "_atproto.marcus.utf9k.net"
   value   = "did=did:plc:go4cv3ofuhkmaxbwxlxqwx7v"
   type    = "TXT"
   ttl     = 3600
