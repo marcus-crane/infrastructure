@@ -43,6 +43,24 @@ resource "cloudflare_ruleset" "utf9k_com_redirect" {
   }
 }
 
+resource "cloudflare_record" "mx-null-utf9k-com" {
+  zone_id  = cloudflare_zone.utf9k-com-zone.id
+  name     = "utf9k.com"
+  value    = "MX 0 ."
+  priority = 10
+  type     = "MX"
+  ttl      = 3600
+}
+
+resource "cloudflare_record" "mx-null-wildcard-utf9k-com" {
+  zone_id  = cloudflare_zone.utf9k-com-zone.id
+  name     = "*.utf9k.com"
+  value    = "MX 0 ."
+  priority = 10
+  type     = "MX"
+  ttl      = 3600
+}
+
 resource "cloudflare_record" "txt-spf-utf9k-com" {
   zone_id = cloudflare_zone.utf9k-com-zone.id
   name    = "utf9k.com"
@@ -51,10 +69,10 @@ resource "cloudflare_record" "txt-spf-utf9k-com" {
   ttl     = 3600
 }
 
-resource "cloudflare_record" "txt-dkim-utf9k-com" {
+resource "cloudflare_record" "txt-spf-wildcard-utf9k-com" {
   zone_id = cloudflare_zone.utf9k-com-zone.id
-  name    = "*._domainkey.utf9k.com"
-  value   = "v=DKIM1; p="
+  name    = "*.utf9k.com"
+  value   = "v=spf1 -all"
   type    = "TXT"
   ttl     = 3600
 }
