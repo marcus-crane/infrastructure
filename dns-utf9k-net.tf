@@ -15,6 +15,14 @@ resource "cloudflare_record" "cname-utf9k-net" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "cname-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "b.utf9k.net"
+  value   = "utf9k.b-cdn.net"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "dotfiles.utf9k.net"
