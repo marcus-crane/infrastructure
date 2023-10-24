@@ -137,15 +137,6 @@ resource "cloudflare_record" "mx-smtp20-utf9k-net" {
   ttl      = 3600
 }
 
-resource "cloudflare_record" "mx-null-wildcard-utf9k-net" {
-  zone_id  = cloudflare_zone.utf9k-net-zone.id
-  name     = "*.utf9k.net"
-  value    = "MX 0 ."
-  priority = 10
-  type     = "MX"
-  ttl      = 3600
-}
-
 # SRV records
 
 resource "cloudflare_record" "srv-caldav-tcp-utf9k-net" {
