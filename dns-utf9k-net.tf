@@ -9,15 +9,16 @@ resource "cloudflare_zone" "utf9k-net-zone" {
 resource "cloudflare_record" "cname-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  proxied = true
-  value   = cloudflare_pages_project.utf9k-net.subdomain
+  value   = "utf9k.b-cdn.net"
   type    = "CNAME"
-  ttl     = 1
+  ttl     = 3600
 }
 
 resource "cloudflare_record" "cname-b-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
-  name    = "b.utf9k.net"
+  name    = "c.utf9k.net"
+  proxied = true
+  value   = cloudflare_pages_project.utf9k-net.subdomain
   value   = "utf9k.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
