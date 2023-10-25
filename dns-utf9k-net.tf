@@ -23,6 +23,14 @@ resource "cloudflare_record" "cname-b-utf9k-net" {
   ttl     = 3600
 }
 
+resource "cloudflare_record" "cname-img-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "cdn.utf9k.net"
+  value   = "utf9kcdn.b-cdn.net"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "dotfiles.utf9k.net"
@@ -36,14 +44,6 @@ resource "cloudflare_record" "cname-gunslinger-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "gunslinger.utf9k.net"
   value   = "gunslinger.fly.dev"
-  type    = "CNAME"
-  ttl     = 3600
-}
-
-resource "cloudflare_record" "cname-img-utf9k-net" {
-  zone_id = cloudflare_zone.utf9k-net-zone.id
-  name    = "img.utf9k.net"
-  value   = "utf9k-img.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
