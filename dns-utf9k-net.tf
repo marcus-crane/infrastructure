@@ -43,7 +43,7 @@ resource "cloudflare_record" "cname-gunslinger-utf9k-net" {
 resource "cloudflare_record" "cname-img-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "img.utf9k.net"
-  value   = "cname.cleanshot.cloud"
+  value   = "utf9k-img.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
