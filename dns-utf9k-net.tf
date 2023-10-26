@@ -19,7 +19,6 @@ resource "cloudflare_record" "cname-b-utf9k-net" {
   name    = "c.utf9k.net"
   proxied = true
   value   = cloudflare_pages_project.utf9k-net.subdomain
-  value   = "utf9k.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
