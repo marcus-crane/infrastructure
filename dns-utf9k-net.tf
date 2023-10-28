@@ -20,7 +20,7 @@ resource "cloudflare_record" "cname-b-utf9k-net" {
   proxied = true
   value   = cloudflare_pages_project.utf9k-net.subdomain
   type    = "CNAME"
-  ttl     = 3600
+  ttl     = 1
 }
 
 resource "cloudflare_record" "cname-img-utf9k-net" {
