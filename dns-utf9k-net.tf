@@ -57,6 +57,15 @@ resource "cloudflare_record" "cname-october-utf9k-net" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "cname-parnell-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "parnell.utf9k.net"
+  proxied = true
+  value   = cloudflare_pages_project.parnell-utf9k-net.subdomain
+  type    = "CNAME"
+  ttl     = 1
+}
+
 resource "cloudflare_record" "cname-towing-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "towing.utf9k.net"
