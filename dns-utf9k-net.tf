@@ -9,16 +9,24 @@ resource "cloudflare_zone" "utf9k-net-zone" {
 resource "cloudflare_record" "cname-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
+  value   = "utf9k.b-cdn.net"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
+resource "cloudflare_record" "cname-b-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "c.utf9k.net"
   proxied = true
   value   = cloudflare_pages_project.utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
 
-resource "cloudflare_record" "cname-b-utf9k-net" {
+resource "cloudflare_record" "cname-img-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
-  name    = "b.utf9k.net"
-  value   = "utf9k.b-cdn.net"
+  name    = "cdn.utf9k.net"
+  value   = "utf9kcdn.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -36,14 +44,6 @@ resource "cloudflare_record" "cname-gunslinger-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "gunslinger.utf9k.net"
   value   = "gunslinger.fly.dev"
-  type    = "CNAME"
-  ttl     = 3600
-}
-
-resource "cloudflare_record" "cname-img-utf9k-net" {
-  zone_id = cloudflare_zone.utf9k-net-zone.id
-  name    = "img.utf9k.net"
-  value   = "cname.cleanshot.cloud"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -142,15 +142,6 @@ resource "cloudflare_record" "mx-smtp20-utf9k-net" {
   name     = "utf9k.net"
   value    = "in2-smtp.messagingengine.com"
   priority = 20
-  type     = "MX"
-  ttl      = 3600
-}
-
-resource "cloudflare_record" "mx-null-wildcard-utf9k-net" {
-  zone_id  = cloudflare_zone.utf9k-net-zone.id
-  name     = "*.utf9k.net"
-  value    = "MX 0 ."
-  priority = 10
   type     = "MX"
   ttl      = 3600
 }

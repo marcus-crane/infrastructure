@@ -43,24 +43,6 @@ resource "cloudflare_ruleset" "utf9k_com_redirect" {
   }
 }
 
-resource "cloudflare_record" "mx-null-utf9k-com" {
-  zone_id  = cloudflare_zone.utf9k-com-zone.id
-  name     = "utf9k.com"
-  value    = "MX 0 ."
-  priority = 10
-  type     = "MX"
-  ttl      = 3600
-}
-
-resource "cloudflare_record" "mx-null-wildcard-utf9k-com" {
-  zone_id  = cloudflare_zone.utf9k-com-zone.id
-  name     = "*.utf9k.com"
-  value    = "MX 0 ."
-  priority = 10
-  type     = "MX"
-  ttl      = 3600
-}
-
 resource "cloudflare_record" "txt-spf-utf9k-com" {
   zone_id = cloudflare_zone.utf9k-com-zone.id
   name    = "utf9k.com"
