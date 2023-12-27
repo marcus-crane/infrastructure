@@ -14,7 +14,7 @@ resource "cloudflare_record" "cname-utf9k-net" {
   ttl     = 3600
 }
 
-resource "cloudflare_record" "cname-b-utf9k-net" {
+resource "cloudflare_record" "cname-c-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "c.utf9k.net"
   proxied = true
@@ -23,7 +23,7 @@ resource "cloudflare_record" "cname-b-utf9k-net" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "cname-img-utf9k-net" {
+resource "cloudflare_record" "cname-cdn-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "cdn.utf9k.net"
   value   = "utf9kcdn.b-cdn.net"
