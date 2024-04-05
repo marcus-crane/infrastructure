@@ -389,3 +389,11 @@ resource "cloudflare_record" "txt-atproto-utf9k-net" {
   type    = "TXT"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "txt-discord-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "_discord.utf9k.net"
+  value   = "dh=ecddc6db55920bda79abf690e3145df51ed7fa6e"
+  type    = "TXT"
+  ttl     = 3600
+}
