@@ -1,7 +1,7 @@
 resource "cloudflare_pages_project" "notes-utf9k-net" {
   account_id        = var.cloudflare_account_id
   name              = "9knotes"
-  production_branch = "main"
+  production_branch = "v4"
   build_config {
     destination_dir = "site"
     root_dir        = "/"
