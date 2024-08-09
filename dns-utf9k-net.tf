@@ -48,6 +48,15 @@ resource "cloudflare_record" "cname-gunslinger-utf9k-net" {
   ttl     = 3600
 }
 
+resource "cloudflare_record" "cname-notes-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "notes.utf9k.net"
+  proxied = true
+  value   = cloudflare_pages_project.notes-utf9k-net.subdomain
+  type    = "CNAME"
+  ttl     = 1
+}
+
 resource "cloudflare_record" "cname-october-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "october.utf9k.net"
