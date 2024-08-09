@@ -46,7 +46,7 @@ resource "cloudflare_ruleset" "utf9k_org_redirect" {
 resource "cloudflare_record" "txt-spf-utf9k-org" {
   zone_id = cloudflare_zone.utf9k-org-zone.id
   name    = "utf9k.org"
-  content   = "v=spf1 -all"
+  content = "v=spf1 -all"
   type    = "TXT"
   ttl     = 3600
 }
@@ -54,7 +54,7 @@ resource "cloudflare_record" "txt-spf-utf9k-org" {
 resource "cloudflare_record" "txt-spf-wildcard-utf9k-org" {
   zone_id = cloudflare_zone.utf9k-org-zone.id
   name    = "*.utf9k.org"
-  content   = "v=spf1 -all"
+  content = "v=spf1 -all"
   type    = "TXT"
   ttl     = 3600
 }
@@ -62,7 +62,7 @@ resource "cloudflare_record" "txt-spf-wildcard-utf9k-org" {
 resource "cloudflare_record" "txt-dmarc-utf9k-org" {
   zone_id = cloudflare_zone.utf9k-org-zone.id
   name    = "_dmarc.utf9k.org"
-  content   = "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s;rua=mailto:admin@utf9k.net;"
+  content = "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s;rua=mailto:admin@utf9k.net;"
   type    = "TXT"
   ttl     = 3600
 }
