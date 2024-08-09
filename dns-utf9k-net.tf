@@ -9,7 +9,7 @@ resource "cloudflare_zone" "utf9k-net-zone" {
 resource "cloudflare_record" "cname-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "utf9k.b-cdn.net"
+  content = "utf9k.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -18,7 +18,7 @@ resource "cloudflare_record" "cname-c-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "c.utf9k.net"
   proxied = true
-  value   = cloudflare_pages_project.utf9k-net.subdomain
+  content = cloudflare_pages_project.utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -26,7 +26,7 @@ resource "cloudflare_record" "cname-c-utf9k-net" {
 resource "cloudflare_record" "cname-cdn-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "cdn.utf9k.net"
-  value   = "utf9kcdn.b-cdn.net"
+  content = "utf9kcdn.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -35,7 +35,7 @@ resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "dotfiles.utf9k.net"
   proxied = true
-  value   = cloudflare_pages_project.dotfiles-utf9k-net.subdomain
+  content = cloudflare_pages_project.dotfiles-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -43,7 +43,7 @@ resource "cloudflare_record" "cname-dotfiles-utf9k-net" {
 resource "cloudflare_record" "cname-gunslinger-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "gunslinger.utf9k.net"
-  value   = "gunslinger.fly.dev"
+  content = "gunslinger.fly.dev"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -52,7 +52,7 @@ resource "cloudflare_record" "cname-notes-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "notes.utf9k.net"
   proxied = true
-  value   = cloudflare_pages_project.notes-utf9k-net.subdomain
+  content = cloudflare_pages_project.notes-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -61,7 +61,7 @@ resource "cloudflare_record" "cname-october-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "october.utf9k.net"
   proxied = true
-  value   = cloudflare_pages_project.october-utf9k-net.subdomain
+  content = cloudflare_pages_project.october-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -70,7 +70,7 @@ resource "cloudflare_record" "cname-parnell-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "parnell.utf9k.net"
   proxied = true
-  value   = cloudflare_pages_project.parnell-utf9k-net.subdomain
+  content = cloudflare_pages_project.parnell-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -79,7 +79,7 @@ resource "cloudflare_record" "cname-towing-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "towing.utf9k.net"
   proxied = true
-  value   = cloudflare_pages_project.towing-utf9k-net.subdomain
+  content = cloudflare_pages_project.towing-utf9k-net.subdomain
   type    = "CNAME"
   ttl     = 1
 }
@@ -88,7 +88,7 @@ resource "cloudflare_record" "cname-www-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "www.utf9k.net"
   proxied = true
-  value   = "utf9k.net"
+  content = "utf9k.net"
   type    = "CNAME"
   ttl     = 1
 }
@@ -98,7 +98,7 @@ resource "cloudflare_record" "cname-www-utf9k-net" {
 resource "cloudflare_record" "cname-mail-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "mail.utf9k.net"
-  value   = "app.fastmail.com"
+  content = "app.fastmail.com"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -106,7 +106,7 @@ resource "cloudflare_record" "cname-mail-utf9k-net" {
 resource "cloudflare_record" "cname-fm1-domainkey-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "fm1._domainkey.utf9k.net"
-  value   = "fm1.utf9k.net.dkim.fmhosted.com"
+  content = "fm1.utf9k.net.dkim.fmhosted.com"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -114,7 +114,7 @@ resource "cloudflare_record" "cname-fm1-domainkey-utf9k-net" {
 resource "cloudflare_record" "cname-fm2-domainkey-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "fm2._domainkey.utf9k.net"
-  value   = "fm2.utf9k.net.dkim.fmhosted.com"
+  content = "fm2.utf9k.net.dkim.fmhosted.com"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -122,7 +122,7 @@ resource "cloudflare_record" "cname-fm2-domainkey-utf9k-net" {
 resource "cloudflare_record" "cname-fm3-domainkey-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "fm3._domainkey.utf9k.net"
-  value   = "fm3.utf9k.net.dkim.fmhosted.com"
+  content = "fm3.utf9k.net.dkim.fmhosted.com"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -130,7 +130,7 @@ resource "cloudflare_record" "cname-fm3-domainkey-utf9k-net" {
 resource "cloudflare_record" "cname-mesmtp-domainkey-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "mesmtp._domainkey.utf9k.net"
-  value   = "mesmtp.utf9k.net.dkim.fmhosted.com"
+  content = "mesmtp.utf9k.net.dkim.fmhosted.com"
   type    = "CNAME"
   ttl     = 3600
 }
@@ -140,7 +140,7 @@ resource "cloudflare_record" "cname-mesmtp-domainkey-utf9k-net" {
 resource "cloudflare_record" "mx-smtp10-utf9k-net" {
   zone_id  = cloudflare_zone.utf9k-net-zone.id
   name     = "utf9k.net"
-  value    = "in1-smtp.messagingengine.com"
+  content  = "in1-smtp.messagingengine.com"
   priority = 10
   type     = "MX"
   ttl      = 3600
@@ -149,7 +149,7 @@ resource "cloudflare_record" "mx-smtp10-utf9k-net" {
 resource "cloudflare_record" "mx-smtp20-utf9k-net" {
   zone_id  = cloudflare_zone.utf9k-net-zone.id
   name     = "utf9k.net"
-  value    = "in2-smtp.messagingengine.com"
+  content  = "in2-smtp.messagingengine.com"
   priority = 20
   type     = "MX"
   ttl      = 3600
@@ -322,7 +322,7 @@ resource "cloudflare_record" "srv-submission-tcp-utf9k-net" {
 resource "cloudflare_record" "txt-acme-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_acme-challenge.utf9k.net"
-  value   = "utf9k.net.6139j.flydns.net"
+  content = "utf9k.net.6139j.flydns.net"
   type    = "TXT"
   ttl     = 3600
 }
@@ -330,7 +330,7 @@ resource "cloudflare_record" "txt-acme-utf9k-net" {
 resource "cloudflare_record" "txt-acme-www-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_acme-challenge.www.utf9k.net"
-  value   = "www.utf9k.net.6139j.flydns.net."
+  content = "www.utf9k.net.6139j.flydns.net."
   type    = "TXT"
   ttl     = 3600
 }
@@ -338,7 +338,7 @@ resource "cloudflare_record" "txt-acme-www-utf9k-net" {
 resource "cloudflare_record" "txt-spf-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "v=spf1 include:spf.messagingengine.com -all"
+  content = "v=spf1 include:spf.messagingengine.com -all"
   type    = "TXT"
   ttl     = 3600
 }
@@ -346,7 +346,7 @@ resource "cloudflare_record" "txt-spf-utf9k-net" {
 resource "cloudflare_record" "txt-spf-wildcard-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "*.utf9k.net"
-  value   = "v=spf1 -all"
+  content = "v=spf1 -all"
   type    = "TXT"
   ttl     = 3600
 }
@@ -354,7 +354,7 @@ resource "cloudflare_record" "txt-spf-wildcard-utf9k-net" {
 resource "cloudflare_record" "txt-keybase-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "keybase-site-verification=3Otbmwt5ONpRiIpZVcBQKSKNJGfuA0PFNYFxc5d88XI"
+  content = "keybase-site-verification=3Otbmwt5ONpRiIpZVcBQKSKNJGfuA0PFNYFxc5d88XI"
   type    = "TXT"
   ttl     = 3600
 }
@@ -362,7 +362,7 @@ resource "cloudflare_record" "txt-keybase-utf9k-net" {
 resource "cloudflare_record" "txt-google1-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "google-site-verification=oU0N55oEkyi5hYWzzQNZwdBmCwDr9Q8np0PJ2ISplH0"
+  content = "google-site-verification=oU0N55oEkyi5hYWzzQNZwdBmCwDr9Q8np0PJ2ISplH0"
   type    = "TXT"
   ttl     = 3600
 }
@@ -370,7 +370,7 @@ resource "cloudflare_record" "txt-google1-utf9k-net" {
 resource "cloudflare_record" "txt-google2-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "google-site-verification=7XQmc_jmbYCEvj_SYEgLCZj-8XBYcdK2RykDlZH2lns"
+  content = "google-site-verification=7XQmc_jmbYCEvj_SYEgLCZj-8XBYcdK2RykDlZH2lns"
   type    = "TXT"
   ttl     = 3600
 }
@@ -378,7 +378,7 @@ resource "cloudflare_record" "txt-google2-utf9k-net" {
 resource "cloudflare_record" "txt-greeting-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "utf9k.net"
-  value   = "Poking around? Feel free to email me at dns@utf9k.net"
+  content = "Poking around? Feel free to email me at dns@utf9k.net"
   type    = "TXT"
   ttl     = 3600
 }
@@ -386,7 +386,7 @@ resource "cloudflare_record" "txt-greeting-utf9k-net" {
 resource "cloudflare_record" "txt-dmarc-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_dmarc.utf9k.net"
-  value   = "v=DMARC1;p=reject;sp=reject;pct=100;aspf=r;rua=mailto:re+qlec0r9rume@dmarc.postmarkapp.com;"
+  content = "v=DMARC1;p=reject;sp=reject;pct=100;aspf=r;rua=mailto:re+qlec0r9rume@dmarc.postmarkapp.com;"
   type    = "TXT"
   ttl     = 3600
 }
@@ -394,7 +394,7 @@ resource "cloudflare_record" "txt-dmarc-utf9k-net" {
 resource "cloudflare_record" "txt-atproto-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_atproto.utf9k.net"
-  value   = "did=did:plc:go4cv3ofuhkmaxbwxlxqwx7v"
+  content = "did=did:plc:go4cv3ofuhkmaxbwxlxqwx7v"
   type    = "TXT"
   ttl     = 3600
 }
@@ -402,7 +402,7 @@ resource "cloudflare_record" "txt-atproto-utf9k-net" {
 resource "cloudflare_record" "txt-discord-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_discord.utf9k.net"
-  value   = "dh=ecddc6db55920bda79abf690e3145df51ed7fa6e"
+  content = "dh=ecddc6db55920bda79abf690e3145df51ed7fa6e"
   type    = "TXT"
   ttl     = 3600
 }
