@@ -78,7 +78,7 @@ resource "cloudflare_record" "cname-parnell-utf9k-net" {
 resource "cloudflare_record" "cname-rssdepot-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "rssdepot.utf9k.net"
-  content = "rssdepot.fly.dev"
+  content = "rssdepot.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
