@@ -75,6 +75,14 @@ resource "cloudflare_record" "cname-parnell-utf9k-net" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "cname-rssdepot-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "rssdepot.utf9k.net"
+  content = "rssdepot.fly.dev"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-towing-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "towing.utf9k.net"
