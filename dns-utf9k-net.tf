@@ -75,10 +75,10 @@ resource "cloudflare_record" "cname-parnell-utf9k-net" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "cname-rss-utf9k-net" {
+resource "cloudflare_record" "cname-rssdepot-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
-  name    = "rss.utf9k.net"
-  content = "rssdepot.s3.us-west-001.backblazeb2.com"
+  name    = "rssdepot.utf9k.net"
+  content = "rssdepot.b-cdn.net"
   type    = "CNAME"
   ttl     = 3600
 }
