@@ -14,6 +14,14 @@ resource "cloudflare_record" "cname-utf9k-net" {
   ttl     = 3600
 }
 
+resource "cloudflare_record" "cname-next-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "next.utf9k.net"
+  content = "utf9k-next.b-cdn.net"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-c-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "c.utf9k.net"
