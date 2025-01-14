@@ -62,7 +62,7 @@ resource "cloudflare_record" "txt-spf-wildcard-utf9k-com" {
 resource "cloudflare_record" "txt-dmarc-utf9k-com" {
   zone_id = cloudflare_zone.utf9k-com-zone.id
   name    = "_dmarc.utf9k.com"
-  content = "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s;rua=mailto:admin@utf9k.net;"
+  content = "v=DMARC1;p=reject;sp=reject;adkim=s;aspf=s;rua=mailto:admin@utf9k.net;ruf=mailto:admin@utf9k.net;"
   type    = "TXT"
   ttl     = 3600
 }

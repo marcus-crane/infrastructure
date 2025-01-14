@@ -402,7 +402,7 @@ resource "cloudflare_record" "txt-greeting-utf9k-net" {
 resource "cloudflare_record" "txt-dmarc-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_dmarc.utf9k.net"
-  content = "v=DMARC1;p=reject;sp=reject;pct=100;aspf=r;rua=mailto:re+qlec0r9rume@dmarc.postmarkapp.com;"
+  content = "v=DMARC1;p=reject;sp=reject;pct=100;aspf=r;rua=mailto:admin@utf9k.net;ruf=mailto:admin@utf9k.net;"
   type    = "TXT"
   ttl     = 3600
 }
