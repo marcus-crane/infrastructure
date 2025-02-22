@@ -65,6 +65,15 @@ resource "cloudflare_record" "cname-notes-utf9k-net" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "cname-nzgovt-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "nzgovt.utf9k.net"
+  proxied = true
+  content = "nzgovtdatasette.fly.dev"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-october-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "october.utf9k.net"
