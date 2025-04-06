@@ -430,3 +430,11 @@ resource "cloudflare_record" "txt-discord-utf9k-net" {
   type    = "TXT"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "txt-debug-atproto-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "_atproto.debug.utf9k.net"
+  content = "did=did:plc:xpfyn4l6ynvwuzbq65hdx75a"
+  type    = "TXT"
+  ttl     = 3600
+}
