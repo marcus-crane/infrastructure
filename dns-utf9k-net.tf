@@ -438,3 +438,11 @@ resource "cloudflare_record" "txt-debug-atproto-utf9k-net" {
   type    = "TXT"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "txt-wrestlingframes-atproto-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "_atproto.wrestlingframes.utf9k.net"
+  content = "did=did:plc:676itxwptvgkvmujxaxudy75"
+  type    = "TXT"
+  ttl     = 3600
+}
