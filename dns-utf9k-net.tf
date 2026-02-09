@@ -108,6 +108,14 @@ resource "cloudflare_record" "cname-towing-utf9k-net" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "wrestlingframes-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "wrestlingframes.utf9k.net"
+  content = "wrestlingframes.b-cdn.net"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-www-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "www.utf9k.net"
