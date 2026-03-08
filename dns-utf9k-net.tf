@@ -65,6 +65,14 @@ resource "cloudflare_record" "cname-notes-utf9k-net" {
   ttl     = 1
 }
 
+resource "cloudflare_record" "cname-nzg-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "nzg.utf9k.net"
+  content = "utf9k-nzg.b-cdn.net"
+  type    = "CNAME"
+  ttl     = 3600
+}
+
 resource "cloudflare_record" "cname-nzgovt-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "nzgovt.utf9k.net"
