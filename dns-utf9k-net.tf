@@ -3,6 +3,24 @@ resource "cloudflare_zone" "utf9k-net-zone" {
   zone       = "utf9k.net"
 }
 
+# A records
+resource "cloudflare_record" "a-ballot-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "ballot.utf9k.net"
+  content = "66.241.125.41"
+  type    = "A"
+  ttl     = 3600
+}
+
+# AAAA records
+resource "cloudflare_record" "aaaa-ballot-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "ballot.utf9k.net"
+  content = "2a09:8280:1::113:a810:0"
+  type    = "AAAA"
+  ttl     = 3600
+}
+
 # CNAME records
 
 ## Web
@@ -363,6 +381,14 @@ resource "cloudflare_record" "txt-acme-utf9k-net" {
   zone_id = cloudflare_zone.utf9k-net-zone.id
   name    = "_acme-challenge.utf9k.net"
   content = "utf9k.net.6139j.flydns.net"
+  type    = "TXT"
+  ttl     = 3600
+}
+
+resource "cloudflare_record" "txt-acme-ballot-utf9k-net" {
+  zone_id = cloudflare_zone.utf9k-net-zone.id
+  name    = "_acme-challenge.ballot.utf9k.net"
+  content = "ballot.utf9k.net.d8wl13n.flydns.net"
   type    = "TXT"
   ttl     = 3600
 }
